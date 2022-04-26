@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
                 lastMousePos = currentMousePos;
 
             deltaPos = currentMousePos - lastMousePos;
-
+            GameManager.singleton.StartGame();
             Vector3 force = new Vector3(deltaPos.x, 0, deltaPos.y)*thrust;
             rb.AddForce(force);
         }
@@ -36,9 +36,9 @@ public class BallController : MonoBehaviour
     {
         if (GameManager.singleton.GameEnded)
             return;
-        if(GameManager.singleton.GameStarted)
+        if (GameManager.singleton.GameStarted)
         {
-            rb.MovePosition(transform.position + Vector3.forward * 5 * Time.deltaTime);
+            rb.MovePosition(transform.position + Vector3.forward * 5 * Time.deltaTime); 
         }
     }
     private void LateUpdate()

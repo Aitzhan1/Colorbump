@@ -34,12 +34,13 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        Debug.Log("Game Started");
         GameStarted = true;
     }
     public void EndGame(bool win)
     {
         GameEnded = true;
-
+        Debug.Log("Game Ended");
         if (!win)
         {
             Invoke("RestartGame", 2f * slowMotionFactor);

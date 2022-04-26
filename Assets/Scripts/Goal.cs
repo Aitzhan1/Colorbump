@@ -11,6 +11,7 @@ public class Goal : MonoBehaviour
         if (!ball || GameManager.singleton.GameEnded)
             return;
 
+        Debug.Log("Goal was touched");
         GameManager.singleton.EndGame(true);
     }
 }
